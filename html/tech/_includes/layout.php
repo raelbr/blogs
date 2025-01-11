@@ -34,7 +34,8 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="logo">
               <a role="brand" href="<?php echo $GLOBALS['root']; ?>/">
-                <span>robotshack</span>
+                <img src="../_assets/svg/logo.svg" />
+                <span><b>robot</b>shack</span>
               </a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

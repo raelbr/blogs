@@ -1,8 +1,3 @@
-/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-
-
-/*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
-
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 @font-face {
@@ -10,13 +5,6 @@ font-family: "Righteous";
 src: url("../fonts/Righteous-Regular.ttf");
 src: url("../fonts/Lato-Regular.ttf");
 }
-/*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
- 2) font-family: 'Poppins', sans-serif;
- ----------------------------------------*****/
-
-
-/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
-
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(icomoon.css);
@@ -29,7 +17,11 @@ src: url("../fonts/Lato-Regular.ttf");
 @import url(jquery-ui.css);
 @import url(nice-select.css);
 
-/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
+
+:root {
+    --primary-color: #007991;
+    --primary-color-2: #004f5f;
+}
 
 * {
      box-sizing: border-box !important;
@@ -209,6 +201,27 @@ button {
      cursor: pointer;
 }
 
+
+
+.logo {
+    width: 80px;
+    font-size: 21px;
+}
+
+.logo > a {
+    color: var(--primary-color);
+}
+
+.logo img {
+    height: 2em;
+    transform: rotate(15deg);
+    margin-top: -2px;
+}
+
+.logo a > span {
+    margin-left: -5px;
+}
+
 .full {
      float: left;
      width: 100%;
@@ -238,18 +251,18 @@ button {
 .bg-light {
     background-color: #fefeff !important;
     box-shadow: 0px 0px 10px 0px;
-    border-top: 45px solid #333a44;
+    border-top: 20px solid #333a44;
 }
 .navbar-light .navbar-nav .nav-link {
     color: #24292f;
     font-weight: 500;
 }
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    color: #4f99e5;
+    color: var(--primary-color-2);;
 }
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-    color: #4f99e5;
+    color: var(--primary-color-2);;
 }
 
 .banner_section {
@@ -279,7 +292,7 @@ button {
     width: 100%;
     float: left;
     font-size: 70px;
-    color: #599ee9;
+    color: var(--primary-color);;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 50px;
@@ -294,34 +307,11 @@ button {
     padding-top: 50px;
 }
 
-.shop_bt {
-    width: 35%;
-    float: left;
-    font-size: 18px;
-    text-align: center;
-    background-color: #fcfcfd;
-    color: #191919;
-    border-left: 10px solid #599ee9;
-    border-radius: 30px;
-    border-right: 10px solid #599ee9;
-    border-top: 4px solid #599ee9;
-    border-bottom: 4px solid #599ee9;
-    padding: 5px 0px;
-    margin-top: 40px;
-}
-
-.shop_bt a{
-    color: #191919;
-}
-.shop_bt a:hover{
-    color: #599ee9;
-}
-
 #my_slider a.carousel-control-prev {
     position: absolute;
     left: 15px;
     top: 115%;
-    background-color: #599ee9;
+    background-color: var(--primary-color);;
 }
 #my_slider .carousel-control-prev, #my_slider .carousel-control-next {
     width: 65px;
@@ -334,7 +324,7 @@ button {
 }
 
 #my_slider .carousel-control-prev:hover, #my_slider .carousel-control-next:hover, #my_slider .carousel-control-prev:focus, #my_slider .carousel-control-next:focus {
-    background: #599ee9;
+    background: var(--primary-color);;
     color: #fff;
 }
 #my_slider a.carousel-control-next {
@@ -374,29 +364,6 @@ button {
     color: #2d343e;
     margin-left: 0px;
     text-align: right;
-}
-
-.shop_bt_2 {
-    width: 35%;
-    float: right;
-    font-size: 18px;
-    text-align: center;
-    background-color: #fcfcfd;
-    color: #191919;
-    border-left: 10px solid #599ee9;
-    border-radius: 30px;
-    border-right: 10px solid #599ee9;
-    border-top: 4px solid #599ee9;
-    border-bottom: 4px solid #599ee9;
-    padding: 5px 0px;
-    margin-top: 40px;
-}
-
-.shop_bt_2 a{
-    color: #191919;
-}
-.shop_bt_2 a:hover{
-    color: #599ee9;
 }
 
 .product_section{
@@ -458,11 +425,11 @@ button {
     text-align: center;
     background-color: #fcfcfd;
     color: #191919;
-    border-left: 10px solid #599ee9;
+    border-left: 10px solid var(--primary-color);;
     border-radius: 30px;
-    border-right: 10px solid #599ee9;
-    border-top: 4px solid #599ee9;
-    border-bottom: 4px solid #599ee9;
+    border-right: 10px solid var(--primary-color);;
+    border-top: 4px solid var(--primary-color);;
+    border-bottom: 4px solid var(--primary-color);;
     padding: 5px 0px;
     margin-top: 40px;
 }
@@ -471,7 +438,7 @@ button {
     color: #191919;
 }
 .see_bt a:hover{
-    color: #599ee9;
+    color: var(--primary-color);;
 }
 
 .video_section{
@@ -486,7 +453,7 @@ button {
     width: 100%;
     float: left;
     font-size: 50px;
-    color: #599ee9;
+    color: var(--primary-color);;
     font-weight: 600;
     text-transform: uppercase;
 
@@ -566,7 +533,7 @@ button {
 .client_main{
     width: 45%;
     float: left;
-    background-color: #599ee9;
+    background-color: var(--primary-color);;
     height: auto;
 }
 
@@ -724,7 +691,7 @@ button {
     float: left;
     font-size: 16pt;
     color: #eceaea;
-    background-color: #599ee9;
+    background-color: var(--primary-color);;
     padding: 5px 0px;
     border: 0px;
     text-align: center;
@@ -751,7 +718,7 @@ button {
 }
 
 .useful_link li a:hover{
-    color: #599ee9;
+    color: var(--primary-color);;
 }
 
 .footer_section_2 {
@@ -759,6 +726,8 @@ button {
     float: left;
     border-bottom: 1px solid #898989;
     padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .social_icon {
@@ -781,7 +750,7 @@ button {
 .copyright_section{
     width: 100%;
     float: left;
-    background-color: #599ee9;
+    background-color: var(--primary-color);;
     height: auto;
 }
 
@@ -819,3 +788,12 @@ button {
     margin-top: 0px; 
 }
 
+.post {
+    margin-top: 40px;
+}
+.post header {
+    margin: 0 20px;
+}
+.post header .post_h1 {
+    font-weight: bold;
+}
