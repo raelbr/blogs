@@ -13,9 +13,9 @@ services:
       - DB_PASS=root
       - DB_NAME=tech
     ports:
-      - "8080:80" # Mapeia a porta 80 do container para a porta 8080 no host
+      - "8080:80"
     volumes:
-      - ./html:/var/www/html # Monta o diretório de código-fonte
+      - ./html:/var/www/html
     container_name: php-apache
 
   db:
@@ -30,6 +30,8 @@ services:
     volumes:
       - db_data:/var/lib/mysql
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3307:3306"
 
 
 volumes:

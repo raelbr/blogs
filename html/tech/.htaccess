@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^([^/]+)$ http://localhost:8080/tech/posts/post_view.php?slug=$1 [L,QSA]
+# RewriteRule (.*)$ http://localhost:8080/tech/posts/post_view.php?slug=researchers_open_source_sky-t1 [R=301,L]
+RewriteRule ^([^/]+)$ /tech/posts/post_view.php?slug=$1 [L,QSA]

@@ -1,0 +1,45 @@
+CREATE TABLE IF NOT EXISTS posts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  slug VARCHAR(500) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  description VARCHAR(500) NOT NULL,
+  subject VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  thumbnail VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (slug)
+);
+
+CREATE INDEX idx_posts_title ON posts (title);
+
+CREATE TABLE IF NOT EXISTS categories (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  slug VARCHAR(100) NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  UNIQUE (slug)
+);
+
+CREATE TABLE IF NOT EXISTS rel_posts_categories (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  post_id INT NOT NULL,
+  category_id INT NOT NULL,
+  KEY (post_id, category_id),
+  FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
+  FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS tags (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  slug VARCHAR(100) NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  UNIQUE (slug)
+);
+
+CREATE TABLE IF NOT EXISTS rel_posts_tags (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  post_id INT NOT NULL,
+  tag_id INT NOT NULL,
+  KEY (post_id, tag_id),
+  FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
+  FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
+);
