@@ -797,11 +797,21 @@ button {
     margin: 10px 20px;
 }
 .post header {
-    margin: 0 20px;
+    margin: 30px 20px 20px 20px;
 }
 .post header .post_h1 {
     font-weight: bold;
-    margin-top: 30px;
+    padding-bottom: 5px;
+}
+.post header .header_infos {
+    display: flex;
+    gap: 5px;
+    color: #999;
+    align-content: center;
+}
+.post header .header_infos .post-date {
+    padding-right: 10px;
+    border-right: 1px solid #CCC;
 }
 section.post-image {
 }

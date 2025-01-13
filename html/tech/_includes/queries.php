@@ -1,44 +1,47 @@
 <?php
 
-  $PAGINATION_LIMIT = 30;
+$PAGINATION_LIMIT = 30;
 
-  /**
-   * ## get_query_post_list
-   */
-  function get_query_post_list($where, $page) {
-    $offset = ($page - 1) * $PAGINATION_LIMIT;
-    $query = "
+/**
+ * ## get_query_post_list
+ */
+function get_query_post_list($where, $page)
+{
+  $offset = ($page - 1) * $GLOBALS["PAGINATION_LIMIT"];
+  $limit = $GLOBALS["PAGINATION_LIMIT"];
+  return "
       SELECT * FROM posts
       WHERE $where
-      LIMIT $PAGINATION_LIMIT
+      LIMIT $limit
       OFFSET $offset
     ";
-    return query;
-  }
+}
 
-  /**
-   * ## get_query_post_list
-   */
-  function get_post_tags($post_id) {
-    $query = "
+/**
+ * ## get_query_post_list
+ */
+function get_post_tags($post_id)
+{
+  return "
       SELECT tags.*
       FROM rel_posts_tags
       JOIN tags ON rel_posts_tags.tag_id = tags.id
       WHERE rel_posts_tags.post_id = $post_id
     ";
-    return query;
-  }
+}
 
-    /**
-   * ## get_query_post_list
-   */
-  function get_post_by_slug() {
-    $query = "
-      SELECT *
+/**
+ * ## get_query_post_list
+ */
+function get_post_by_slug()
+{
+  $query = "
+    SELECT posts.*, categories.name as category_name, categories.slug as category_slug
       FROM posts
-      WHERE slug=?
-    ";
-    return $query;
-  }
+      JOIN categories ON categories.id = posts.category_id
+      WHERE posts.slug = ?
+  ";
+  return $query;
+}
 
 ?>

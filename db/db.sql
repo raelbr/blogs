@@ -1,3 +1,11 @@
+-- CATEGORIES
+CREATE TABLE IF NOT EXISTS categories (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  slug VARCHAR(100) NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  UNIQUE (slug)
+);
+
 CREATE TABLE IF NOT EXISTS posts (
   id INT AUTO_INCREMENT PRIMARY KEY,
   slug VARCHAR(500) NOT NULL,
@@ -6,27 +14,17 @@ CREATE TABLE IF NOT EXISTS posts (
   subject VARCHAR(255) NOT NULL,
   content TEXT NOT NULL,
   thumbnail VARCHAR(255) NOT NULL,
+  category_id INT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE,
   UNIQUE (slug)
 );
 
 CREATE INDEX idx_posts_title ON posts (title);
 
-CREATE TABLE IF NOT EXISTS categories (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  slug VARCHAR(100) NOT NULL,
-  name VARCHAR(100) NOT NULL,
-  UNIQUE (slug)
-);
+CREATE INDEX idx_posts_subject ON posts (subject);
 
-CREATE TABLE IF NOT EXISTS rel_posts_categories (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  post_id INT NOT NULL,
-  category_id INT NOT NULL,
-  KEY (post_id, category_id),
-  FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
-  FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
-);
+CREATE INDEX idx_posts_category ON posts (category_id);
 
 CREATE TABLE IF NOT EXISTS tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -35,7 +33,7 @@ CREATE TABLE IF NOT EXISTS tags (
   UNIQUE (slug)
 );
 
-CREATE TABLE IF NOT EXISTS rel_posts_tags (
+CREATE TABLE IF NOT EXISTS posts_tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
   post_id INT NOT NULL,
   tag_id INT NOT NULL,
@@ -43,3 +41,15 @@ CREATE TABLE IF NOT EXISTS rel_posts_tags (
   FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
   FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
 );
+
+-- MEDIA
+CREATE TABLE IF NOT EXISTS media (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  label VARCHAR(500) NOT NULL,
+  type INT NOT NULL,
+  post_id INT NOT NULL,
+  value VARCHAR(500) NOT NULL,
+  FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_media_type ON media (type);

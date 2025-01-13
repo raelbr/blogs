@@ -23,15 +23,24 @@ $post = get_single_post_by_slug(slug: $post_slug);
     <div class="row">
       <article class="post col-md-6">
         <section class="post-image">
-          <img
-            src="https://media.licdn.com/dms/image/C5612AQFjboZ3ggD-uQ/article-cover_image-shrink_600_2000/0/1645833122523?e=2147483647&v=beta&t=wgkobzY0jiOe6Dm4s_fnLRKH7IVv3SgxCbwrpsb6a_s" />
+          <img src="<?php echo $post["thumbnail"]; ?>" />
         </section>
         <header>
           <h1 class="post_h1"><?php echo $post["title"]; ?></h1>
+          <div class="header_infos">
+            <span class="post-date"><?php echo format_date_only($post["created_at"]); ?></span>
+            <a href="<?php echo $post["category_slug"]; ?>"><?php echo $post["category_name"]; ?></a>
+          </div>
         </header>
         <main>
           <?php echo $post["content"]; ?>
         </main>
+        <footer>
+          <strong>Tags:</strong>
+          <ul>
+            <li><a href=""></a></li>
+          </ul>
+        </footer>
       </article>
     </div>
   </div>
