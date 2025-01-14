@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@font-face {
+  font-family: "Righteous";
+  src: url("../fonts/Righteous-Regular.ttf");
+  src: url("../fonts/Lato-Regular.ttf");
+}
+@import url(../_css/animate.min.css);
+@import url(../_css/normalize.css);
+@import url(../_css/icomoon.css);
+@import url(../_css/font-awesome.min.css);
+@import url(../_css/meanmenu.css);
+@import url(../_css/owl.carousel.min.css);
+@import url(../_css/swiper.min.css);
+@import url(../_css/slick.css);
+@import url(../_css/jquery.fancybox.min.css);
+@import url(../_css/jquery-ui.css);
+@import url(../_css/nice-select.css);
+
+@import "./reset.scss";
+@import "./layout.scss";
+@import "./posts.scss";

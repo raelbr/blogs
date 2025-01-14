@@ -10,10 +10,12 @@ function get_query_post_list($where, $page)
   $offset = ($page - 1) * $GLOBALS["PAGINATION_LIMIT"];
   $limit = $GLOBALS["PAGINATION_LIMIT"];
   return "
-      SELECT * FROM posts
-      WHERE $where
-      LIMIT $limit
-      OFFSET $offset
+      SELECT posts.*, categories.name as category_name, categories.slug as category_slug
+        FROM posts
+        LEFT JOIN categories ON categories.id = posts.category_id
+        WHERE $where
+          LIMIT $limit
+          OFFSET $offset
     ";
 }
 
@@ -38,7 +40,7 @@ function get_post_by_slug()
   $query = "
     SELECT posts.*, categories.name as category_name, categories.slug as category_slug
       FROM posts
-      JOIN categories ON categories.id = posts.category_id
+      LEFT JOIN categories ON categories.id = posts.category_id
       WHERE posts.slug = ?
   ";
   return $query;
