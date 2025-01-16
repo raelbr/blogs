@@ -15,6 +15,7 @@ function get_query_post_list($where, $page)
         FROM posts
         LEFT JOIN categories ON categories.id = posts.category_id AND categories.lang=$lang
         WHERE $where AND posts.lang=$lang
+          ORDER BY id DESC
           LIMIT $limit
           OFFSET $offset
     ";
