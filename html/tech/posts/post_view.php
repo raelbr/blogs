@@ -46,7 +46,7 @@ $tags = get_post_tags($post["id"]);
         <ul class="post-tags">
           <?php foreach ($tags as $tag) { ?>
             <li>
-              <a href="<?php echo $tag["slug"]; ?>">
+              <a href="<?php $GLOBALS["root"]; ?>/tag/<?php echo $tag["slug"]; ?>">
                 <?php echo $tag["name"]; ?>
               </a>
             </li>

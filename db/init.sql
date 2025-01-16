@@ -75,3 +75,16 @@ CREATE TABLE IF NOT EXISTS media (
 );
 
 CREATE INDEX idx_media_type ON media (type);
+
+--META
+CREATE TABLE `meta` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(50) NOT NULL,
+  `ref` VARCHAR(100) NOT NULL,
+  `value` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE INDEX idx_meta_type ON meta (type);
+
+CREATE INDEX idx_meta_key ON meta (ref);

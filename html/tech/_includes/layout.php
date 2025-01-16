@@ -52,10 +52,7 @@
               <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>"><?php translate("Home"); ?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>/categories"><?php translate("Categories"); ?></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>/tags"><?php translate("Tags"); ?></a>
+              <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>/articles"><?php translate("Articles"); ?></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>/products"><?php translate("Product Scope"); ?></a>
