@@ -35,6 +35,19 @@ function get_post_list_by_category($category_id, $page)
 }
 
 /**
+ * ## get_post_tags
+ * returns a list of tags by post id
+ */
+function get_post_tags($post_id)
+{
+  $sql = get_post_tags_query($post_id);
+  $stmt = $GLOBALS["pdo"]->prepare($sql);
+  $stmt->execute();
+  return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+}
+
+/**
  * ## get_post_list_by_tag
  * returns a list of posts based on provided tag and page
  */

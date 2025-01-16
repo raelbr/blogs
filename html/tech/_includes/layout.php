@@ -1,4 +1,5 @@
-<?php function get_head() { ?>
+<?php function get_head()
+{ ?>
   <!-- basic -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,61 +23,59 @@
   <!-- Scrollbar Custom CSS -->
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/jquery.mCustomScrollbar.min.css">
   <!-- Tweaks for older IEs-->
-  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-  <!-- owl stylesheets --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- owl stylesheets -->
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/owl.carousel.min.css">
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+    media="screen">
 <?php } ?>
-<?php function get_body_header(){ ?>
-	<!-- header section start -->
-	<div class="header_section">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="logo">
-              <a role="brand" href="<?php echo $GLOBALS['root']; ?>/">
-                <img src="../_assets/svg/logo.svg" />
-                <span><b>robot</b>shack</span>
-              </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">HOME</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="product.html">OUR PRODUCTS</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="video.html">VIDEO GAMES</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="remot.html">REMOT CONTROL</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">CONTACT US</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><img src="images/search-icon.png"></a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">SIGN IN</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">REGISTER</a>
-                </li>
-              </ul>
-            </div>
-        </nav>
-	</div>
+<?php function get_body_header()
+{ ?>
+  <!-- header section start -->
+  <div class="header_section">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <div class="logo">
+          <a role="brand" href="<?php echo $GLOBALS['root']; ?>/">
+            <img src="../_assets/svg/logo.svg" />
+            <span><b>robot</b>shack</span>
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>"><?php translate("Home"); ?></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>/categories"><?php translate("Categories"); ?></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>/tags"><?php translate("Tags"); ?></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>/products"><?php translate("Product Scope"); ?></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>/contact"><?php translate("Contact"); ?></a>
+            </li>
+          </ul>
+          <div class="nav-item search">
+            <img src="<?php echo $GLOBALS["root"]; ?>/_assets/svg/search.svg" />
+            <input placeholder="<?php translate("Search"); ?>" />
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
   <!-- header section end -->
 <?php } ?>
-<?php function get_carousel_header() { ?>
+<?php function get_carousel_header()
+{ ?>
   <!-- banner section start -->
   <div class="banner_section layout_padding">
     <div class="container">
@@ -87,39 +86,45 @@
               <div class="col-md-6">
                 <h1 class="video_text">Video games</h1>
                 <h1 class="controller_text">controller</h1>
-                <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+                <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority
+                  have suffered alteration in some form, by injected humour, or randomised words which don't look even
+                  slightly believable</p>
                 <div class="shop_bt"><a href="#">Shop Now</a></div>
               </div>
               <div class="col-md-6">
                 <div class="image_1"><img src="images/img-1.png"></div>
+              </div>
             </div>
-          </div>
           </div>
           <div class="carousel-item">
             <div class="row">
               <div class="col-md-6">
                 <h1 class="video_text">Video games</h1>
                 <h1 class="controller_text">controller</h1>
-                <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+                <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority
+                  have suffered alteration in some form, by injected humour, or randomised words which don't look even
+                  slightly believable</p>
                 <div class="shop_bt"><a href="#">Shop Now</a></div>
               </div>
               <div class="col-md-6">
                 <div class="image_1"><img src="images/img-1.png"></div>
+              </div>
             </div>
-          </div>
           </div>
           <div class="carousel-item">
             <div class="row">
               <div class="col-md-6">
                 <h1 class="video_text">Video games</h1>
                 <h1 class="controller_text">controller</h1>
-                <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+                <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority
+                  have suffered alteration in some form, by injected humour, or randomised words which don't look even
+                  slightly believable</p>
                 <div class="shop_bt"><a href="#">Shop Now</a></div>
               </div>
               <div class="col-md-6">
                 <div class="image_1"><img src="images/img-1.png"></div>
+              </div>
             </div>
-          </div>
           </div>
         </div>
         <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
@@ -133,30 +138,32 @@
   </div>
   <!-- banner section end -->
 <?php } ?>
-<?php function get_body_footer() { ?>
+<?php function get_body_footer()
+{ ?>
   <!-- footer section start -->
   <div class="section_footer ">
-      <div class="container"> 
-          <div class="footer_section_2">
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                  <h2 class="account_text">About Us</h2>
-                  <p class="ipsum_text_2">dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor incididunt r</p>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                  <h2 class="account_text">Useful Link</h2>
-                  <div class="useful_link">
-                    <ul>
-                      <li><a href="#">Video games</a></li>
-                      <li><a href="#">Remote control</a></li>
-                      <li><a href="#">3d controller</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                <h2 class="account_text">Contact Us</h2>
-                <p class="ipsum_text_2">dolor sit amet, consectetur magna aliqua. quisdotempor incididunt ut e </p>
-                </div>
+    <div class="container">
+      <div class="footer_section_2">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <h2 class="account_text">About Us</h2>
+            <p class="ipsum_text_2">dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor
+              incididunt r</p>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <h2 class="account_text">Useful Link</h2>
+            <div class="useful_link">
+              <ul>
+                <li><a href="#">Video games</a></li>
+                <li><a href="#">Remote control</a></li>
+                <li><a href="#">3d controller</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <h2 class="account_text">Contact Us</h2>
+            <p class="ipsum_text_2">dolor sit amet, consectetur magna aliqua. quisdotempor incididunt ut e </p>
+          </div>
           <div class="col-sm-6 col-md-6 col-lg-3">
             <h2 class="account_text">Newsletter</h2>
             <input type="" class="email_text" placeholder="Enter Your Email" name="Enter Your Email">
@@ -178,29 +185,31 @@
   <!-- copyright section start -->
   <div class="copyright_section">
     <div class="container">
-      <p class="copyright_text">Copyright 2020 All Right Reserved By <a href="https://html.design/"> Free html Templates</p>
+      <p class="copyright_text">Copyright 2020 All Right Reserved By <a href="https://html.design/"> Free html Templates
+      </p>
     </div>
   </div>
   <!-- copyright section end -->
 <?php } ?>
-<?php function get_js_scripts() { ?>
+<?php function get_js_scripts()
+{ ?>
   <!-- Javascript files-->
-    <script src="<?php echo $GLOBALS['root']; ?>/_js/jquery.min.js"></script>
-    <script src="<?php echo $GLOBALS['root']; ?>/_js/popper.min.js"></script>
-    <script src="<?php echo $GLOBALS['root']; ?>/_js/bootstrap.bundle.min.js"></script>
-    <script src="<?php echo $GLOBALS['root']; ?>/_js/jquery-3.0.0.min.js"></script>
-    <script src="<?php echo $GLOBALS['root']; ?>/_js/plugin.js"></script>
-    <!-- sidebar -->
-    <script src="<?php echo $GLOBALS['root']; ?>/_js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="<?php echo $GLOBALS['root']; ?>/_js/custom.js"></script>
-    <!-- javascript --> 
-    <script src="<?php echo $GLOBALS['root']; ?>/_js/owl.carousel.js"></script>
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    <script>
-    $(document).ready(function(){
-    $(".fancybox").fancybox({
+  <script src="<?php echo $GLOBALS['root']; ?>/_js/jquery.min.js"></script>
+  <script src="<?php echo $GLOBALS['root']; ?>/_js/popper.min.js"></script>
+  <script src="<?php echo $GLOBALS['root']; ?>/_js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo $GLOBALS['root']; ?>/_js/jquery-3.0.0.min.js"></script>
+  <script src="<?php echo $GLOBALS['root']; ?>/_js/plugin.js"></script>
+  <!-- sidebar -->
+  <script src="<?php echo $GLOBALS['root']; ?>/_js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="<?php echo $GLOBALS['root']; ?>/_js/custom.js"></script>
+  <!-- javascript -->
+  <script src="<?php echo $GLOBALS['root']; ?>/_js/owl.carousel.js"></script>
+  <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".fancybox").fancybox({
         openEffect: "none",
         closeEffect: "none"
-        });
-    </script>
+      });
+  </script>
 <?php } ?>

@@ -16,17 +16,19 @@ $page = isset($_GET["slug"]) ? $_GET["slug"] : 1;
 <body>
   <?php get_body_header(); ?>
   <main class="home">
-    <div class="row post-list">
+    <div class="container post-list">
       <?php foreach (get_post_list($page) as $post) { ?>
         <a href="<?php echo $GLOBALS["root"] . '/post/' . $post["slug"]; ?>" class="post-item col-md-6">
           <section class="post-image">
-            <img
-              src="https://media.licdn.com/dms/image/C5612AQFjboZ3ggD-uQ/article-cover_image-shrink_600_2000/0/1645833122523?e=2147483647&v=beta&t=wgkobzY0jiOe6Dm4s_fnLRKH7IVv3SgxCbwrpsb6a_s" />
+            <img src="<?php echo $post['thumbnail'] ?>" />
           </section>
           <section class="post-content">
             <span class="post-item-category"><?php echo $post["category_name"] ?></span>
-            <h3 class="post_h1"><?php echo $post["title"]; ?></h3>
+            <div class="post-item-title">
+              <h3><?php echo $post["title"]; ?></h3>
+            </div>
             <p class="post-description"><?php echo $post["description"]; ?></p>
+            <span class="post-item-date">posted on <?php echo format_date_only($post["created_at"]); ?></span>
           </section>
         </a>
       <? } ?>

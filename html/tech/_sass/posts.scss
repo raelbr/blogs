@@ -6,6 +6,25 @@
   padding-right: 0;
   padding-bottom: 20px;
 
+  > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a {
+    color: $primary-color;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  header,
+  main,
+  footer {
+    max-width: 750px;
+  }
+
   main {
     margin: 10px 20px;
   }
@@ -28,6 +47,20 @@
       }
     }
   }
+  footer {
+    display: block;
+    padding: 0 20px;
+
+    .post-tags {
+      display: flex;
+      gap: 5px;
+      li {
+        display: inline-block;
+        padding: 5px;
+        background-color: #f3f3f3;
+      }
+    }
+  }
 }
 
 .post-list {
@@ -42,16 +75,34 @@
     transition: all 0.3s;
     .post-item-category {
       color: $primary-color;
+      text-transform: uppercase;
+      font-size: 0.8em;
+    }
+    .post-item-date {
+      display: inline;
+      font-size: 0.9em;
+      color: #999;
+    }
+    .post-item-title {
+      display: block;
+      padding-bottom: 10px;
+
+      h3 {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
     }
     .post-image {
+      padding-top: 5px;
       > img {
-        width: 200px;
+        width: 160px;
       }
     }
     .post-content {
       flex: 1;
       p {
         font-size: 0.9em;
+        margin-bottom: 0;
       }
     }
 
@@ -60,6 +111,19 @@
     &:active {
       background-color: #f3f3f3;
       transform: scale(0.98);
+    }
+  }
+}
+
+@include mobile {
+  .post {
+    main,
+    header,
+    footer {
+      padding-right: 0;
+      padding-left: 0;
+      margin-left: 30px;
+      margin-right: 30px;
     }
   }
 }
