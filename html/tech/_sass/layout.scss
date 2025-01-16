@@ -411,13 +411,6 @@ button {
   margin-left: 0;
 }
 
-.client_main {
-  width: 45%;
-  float: left;
-  background-color: var(--primary-color);
-  height: auto;
-}
-
 .client_left {
   width: 50%;
   float: left;
@@ -472,11 +465,7 @@ button {
 .email_box {
   width: 100%;
   float: left;
-  /* background-color: #ffffff; */
-  /* border-radius: 20px; */
   height: auto;
-  /* padding: 50px 20px; */
-  /* opacity: 0.80; */
 }
 
 .email-bt {
@@ -546,6 +535,22 @@ button {
   height: auto;
   padding-top: 30px;
   padding-bottom: 30px;
+
+  a {
+    color: #999 !important;
+    font-size: 0.9rem;
+
+    &:hover {
+      color: #fff !important;
+    }
+  }
+
+  .footer-top-list {
+    ul li {
+      display: inline-block;
+      padding: 0 5px;
+    }
+  }
 }
 
 .account_text {
@@ -580,28 +585,6 @@ button {
   font-weight: 600;
 }
 
-.useful_link {
-  width: 100%;
-  float: left;
-}
-.useful_link ul {
-  margin: 0px;
-  padding: 0px;
-}
-
-.useful_link li {
-  color: #ffffff;
-  font-size: 16px;
-}
-
-.useful_link li a {
-  color: #ffffff;
-}
-
-.useful_link li a:hover {
-  color: var(--primary-color);
-}
-
 .footer_section_2 {
   width: 100%;
   float: left;
@@ -609,6 +592,7 @@ button {
   padding-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;
+  font-size: 12px;
 }
 
 .social_icon {
@@ -631,17 +615,19 @@ button {
 .copyright_section {
   width: 100%;
   float: left;
-  background-color: var(--primary-color);
+  background-color: $primary-color;
   height: auto;
-}
 
-.copyright_text {
-  width: 100%;
-  float: left;
-  font-size: 16px;
-  color: #ffffff;
-  text-align: center;
-  margin-left: 0px;
+  span {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    margin-left: 0px;
+    font-size: 12px;
+    padding: 5px 0;
+  }
 }
 
 .copyright_text a {

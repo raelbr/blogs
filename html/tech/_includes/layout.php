@@ -138,28 +138,37 @@
 <?php function get_body_footer()
 { ?>
   <!-- footer section start -->
-  <div class="section_footer ">
+  <footer class="section_footer ">
     <div class="container">
       <div class="footer_section_2">
         <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <h2 class="account_text">About Us</h2>
-            <p class="ipsum_text_2">dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor
-              incididunt r</p>
+          <div class="col-sm-6 col-md-6 col-lg-3 footer-top-list">
+            <h2 class="account_text"><?php translate("Top Categories"); ?></h2>
+            <ul>
+              <?php foreach (get_footer_categories() as $category) { ?>
+                <li>
+                  <a href="<?php echo $GLOBALS["root"] ?>/category/<?php echo $category["slug"] ?>">
+                    <?php echo $category["name"] ?>
+                  </a>
+                </li>
+              <?php } ?>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3 footer-top-list">
+            <h2 class="account_text"><?php translate("Top Post Tags"); ?></h2>
+            <ul>
+              <?php foreach (get_footer_tags() as $tag) { ?>
+                <li>
+                  <a href="<?php echo $GLOBALS["root"] ?>/tag/<?php echo $tag["slug"] ?>">
+                    <?php echo $tag["name"] ?>
+                  </a>
+                </li>
+              <?php } ?>
+            </ul>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-3">
-            <h2 class="account_text">Useful Link</h2>
-            <div class="useful_link">
-              <ul>
-                <li><a href="#">Video games</a></li>
-                <li><a href="#">Remote control</a></li>
-                <li><a href="#">3d controller</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <h2 class="account_text">Contact Us</h2>
-            <p class="ipsum_text_2">dolor sit amet, consectetur magna aliqua. quisdotempor incididunt ut e </p>
+            <h2 class="account_text"><?php translate("Our Partners"); ?></h2>
+            <p><a href="<?php $GLOBALS["root"]; ?>/contact"><?php translate("Contact Us to become a partner!"); ?></a></p>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-3">
             <h2 class="account_text">Newsletter</h2>
@@ -177,13 +186,14 @@
         </ul>
       </div>
     </div>
-  </div>
+  </footer>
   <!-- footer section end -->
   <!-- copyright section start -->
   <div class="copyright_section">
     <div class="container">
-      <p class="copyright_text">Copyright 2020 All Right Reserved By <a href="https://html.design/"> Free html Templates
-      </p>
+      <span>
+        Copyright RobotShack 2025 All Right Reserved
+      </span>
     </div>
   </div>
   <!-- copyright section end -->

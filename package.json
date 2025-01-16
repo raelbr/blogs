@@ -16,6 +16,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch c:/WORK/AI/blogs/html/tech/_sass/index.scss:c:/WORK/AI/blogs/html/tech/_css/style.css --style=compressed --quiet"
+    "sass": "sass --watch c:/WORK/AI/blogs/html/tech/_sass/index.scss:c:/WORK/AI/blogs/html/tech/_css/style.css --style=compressed"
   }
 }

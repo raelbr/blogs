@@ -48,4 +48,28 @@ function get_post_by_slug()
   return $query;
 }
 
+function get_categories_list_query($where = "1=1", $limit = 20, $order_by = "id DESC")
+{
+  $lang = get_lang();
+  return "
+      SELECT *
+        FROM categories
+        WHERE $where AND lang=$lang
+        ORDER BY $order_by
+        LIMIT $limit
+  ";
+}
+
+function get_tags_list_query($where = "1=1", $limit = 20, $order_by = "id DESC")
+{
+  $lang = get_lang();
+  return "
+      SELECT *
+        FROM tags
+        WHERE $where AND lang=$lang
+        ORDER BY $order_by
+        LIMIT $limit
+  ";
+}
+
 ?>

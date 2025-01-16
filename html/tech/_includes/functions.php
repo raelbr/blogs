@@ -65,4 +65,20 @@ function get_post_list_by_keywords($keywords, $page)
 
 }
 
+function get_footer_categories()
+{
+  $sql = get_categories_list_query("1=1", 15, "count DESC");
+  $stmt = $GLOBALS["pdo"]->prepare($sql);
+  $stmt->execute();
+  return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+function get_footer_tags()
+{
+  $sql = get_tags_list_query("1=1", 15, "count DESC");
+  $stmt = $GLOBALS["pdo"]->prepare($sql);
+  $stmt->execute();
+  return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+}
+
 ?>
