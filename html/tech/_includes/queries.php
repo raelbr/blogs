@@ -73,4 +73,43 @@ function get_tags_list_query($where = "1=1", $limit = 20, $order_by = "id DESC")
   ";
 }
 
+function get_tag_by_slug_query()
+{
+  $lang = get_lang();
+  return "
+    SELECT *
+      FROM tags
+      WHERE slug=? AND lang=$lang
+  ";
+}
+function get_tag_posts_by_tag_id_query($id)
+{
+  return "
+    SELECT posts.*, categories.name as category_name, categories.slug as category_slug
+      FROM posts_tags
+      LEFT JOIN posts ON posts_tags.post_id = posts.id
+      LEFT JOIN categories ON categories.id = posts.category_id
+      WHERE posts_tags.tag_id=$id
+  ";
+}
+
+function get_category_by_slug_query()
+{
+  $lang = get_lang();
+  return "
+    SELECT *
+      FROM categories
+      WHERE slug=? AND lang=$lang
+  ";
+}
+function get_categories_posts_by_category_id_query($id)
+{
+  return "
+    SELECT posts.*, categories.name as category_name, categories.slug as category_slug
+      FROM posts
+      LEFT JOIN categories ON categories.id = posts.category_id
+      WHERE posts.category_id=$id
+  ";
+}
+
 ?>

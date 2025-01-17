@@ -48,15 +48,6 @@ function get_post_tags($post_id)
 }
 
 /**
- * ## get_post_list_by_tag
- * returns a list of posts based on provided tag and page
- */
-function get_post_list_by_tag($category_id, $page)
-{
-
-}
-
-/**
  * ## get_post_list_by_keywords
  * returns a list of posts based on provided keywords and page
  */
@@ -79,6 +70,36 @@ function get_footer_tags()
   $stmt = $GLOBALS["pdo"]->prepare($sql);
   $stmt->execute();
   return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+function get_tag_by_slug($slug)
+{
+  $sql = get_tag_by_slug_query();
+  $stmt = $GLOBALS["pdo"]->prepare($sql);
+  $stmt->execute([$slug]);
+  return $stmt->fetch();
+}
+function get_tag_posts_by_tag_id($id)
+{
+  $sql = get_tag_posts_by_tag_id_query($id);
+  $sth = $GLOBALS["pdo"]->prepare($sql);
+  $sth->execute();
+  return $sth->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+function get_category_by_slug($slug)
+{
+  $sql = get_category_by_slug_query();
+  $stmt = $GLOBALS["pdo"]->prepare($sql);
+  $stmt->execute([$slug]);
+  return $stmt->fetch();
+}
+function get_categories_posts_by_category_id($id)
+{
+  $sql = get_categories_posts_by_category_id_query($id);
+  $sth = $GLOBALS["pdo"]->prepare($sql);
+  $sth->execute();
+  return $sth->fetchAll(\PDO::FETCH_ASSOC);
 }
 
 ?>
