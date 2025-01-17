@@ -1,30 +1,20 @@
-<?php function get_head()
+<?php function get_head($title = "", $keywords = "", $description = "")
 { ?>
-  <!-- basic -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- mobile metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-  <!-- site metas -->
-  <title>RobotShack</title>
-  <meta name="lang" content="en">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
+  <title><?php echo $title != "" ? $title . ' - ' : ''; ?>RobotShack</title>
+  <meta name="lang"
+    content="<?php echo isset($GLOBALS["lang_dictionary"][get_lang()]) ? $GLOBALS["lang_dictionary"][get_lang()] : 'en'; ?>">
+  <meta name="keywords" content="<?php echo $keywords; ?>">
+  <meta name="description" content="<?php echo $description; ?>">
   <meta name="author" content="Rael B. Riolino">
-  <!-- bootstrap css -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <!-- style css -->
   <link rel="stylesheet" type="text/css" href="<?php echo $GLOBALS['root']; ?>/_css/style.css">
-  <!-- Responsive-->
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/responsive.css">
-  <!-- fevicon -->
   <link rel="icon" href="images/fevicon.png" type="image/gif" />
-  <!-- Scrollbar Custom CSS -->
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/jquery.mCustomScrollbar.min.css">
-  <!-- Tweaks for older IEs-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <!-- owl stylesheets -->
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/owl.carousel.min.css">
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/owl.theme.default.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"

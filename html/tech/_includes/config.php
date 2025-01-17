@@ -6,17 +6,23 @@ $user = getenv('DB_USER');
 $pass = getenv('DB_PASS');
 
 try {
-    $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
-    $pdo = new PDO($dsn, $user, $pass, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ]);
+  $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+  $pdo = new PDO($dsn, $user, $pass, [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+  ]);
 } catch (PDOException $e) {
-    die("Database Error");
+  die("Database Error");
 }
 
 $post_img_url = "";
 $lang = 1;
 $root = '/tech';
+
+$lang_dictionary = array(
+  "1" => "en",
+  "2" => "es",
+  "3" => "pt-br",
+);
 
 ?>

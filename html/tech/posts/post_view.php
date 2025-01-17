@@ -9,13 +9,15 @@ if (!isset($_GET["slug"])) {
 $post_slug = parse_get(var: 'slug');
 $post = get_single_post_by_slug(slug: $post_slug);
 $tags = get_post_tags($post["id"]);
+$tagNames = array_map(fn($tag) => $tag['name'], $tags);
+$keywords = implode(', ', $tagNames);
 ?>
 
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
 
 <head>
-  <?php get_head(); ?>
+  <?php get_head($post["title"], $keywords, $post["description"]); ?>
 </head>
 
 <body>
