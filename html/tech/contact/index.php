@@ -2,11 +2,6 @@
 <?php require_once("../_includes/layout.php"); ?>
 <?php require_once("../_includes/utils.php"); ?>
 <?php require_once("../_includes/functions.php"); ?>
-<?php require_once("../_includes/posts.php"); ?>
-<?php
-$page = isset($_GET["slug"]) ? $_GET["slug"] : 1;
-$page_query = get_post_list($page);
-?>
 
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
@@ -17,10 +12,12 @@ $page_query = get_post_list($page);
 
 <body>
   <?php get_body_header(); ?>
-  <main class="home">
-    <?php render_post_list($page_query); ?>
-  </main>
-  <!-- about section end -->
+  <div class="container products">
+    <main class="col-md-9 page">
+      <strong>Coming soon...</strong><br />
+      <p>This page will be available soon</p>
+    </main>
+  </div>
   <?php get_body_footer(); ?>
   <?php get_js_scripts(); ?>
 </body>

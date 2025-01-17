@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS posts (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   source_name: VARCHAR(255) NOT NULL,
   source_url: VARCHAR(500) NOT NULL,
+  highlight TINYINT NOT NULL DEFAULT 0,
   FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE,
   UNIQUE (slug)
 );
@@ -39,6 +40,8 @@ CREATE INDEX idx_posts_category ON posts (category_id);
 CREATE INDEX idx_posts_slug ON posts (slug);
 
 CREATE INDEX idx_posts_lang ON posts (lang);
+
+CREATE INDEX idx_posts_highlight ON posts (highlight);
 
 CREATE TABLE IF NOT EXISTS tags (
   id INT AUTO_INCREMENT PRIMARY KEY,

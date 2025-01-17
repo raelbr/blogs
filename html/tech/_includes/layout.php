@@ -22,7 +22,6 @@
 <?php } ?>
 <?php function get_body_header()
 { ?>
-  <!-- header section start -->
   <div class="header_section">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
@@ -59,11 +58,9 @@
       </div>
     </nav>
   </div>
-  <!-- header section end -->
 <?php } ?>
 <?php function get_carousel_header()
 { ?>
-  <!-- banner section start -->
   <div class="banner_section layout_padding">
     <div class="container">
       <div id="my_slider" class="carousel slide" data-ride="carousel">
@@ -123,11 +120,9 @@
       </div>
     </div>
   </div>
-  <!-- banner section end -->
 <?php } ?>
 <?php function get_body_footer()
 { ?>
-  <!-- footer section start -->
   <footer class="section_footer ">
     <div class="container">
       <div class="footer_section_2">
@@ -167,18 +162,20 @@
           </div>
         </div>
       </div>
-      <div class="social_icon">
+      <section class="social_icons">
         <ul>
-          <li><a href="#"><img src="images/fb-icon.png"></a></li>
-          <li><a href="#"><img src="images/twitter-icon.png"></a></li>
-          <li><a href="#"><img src="images/linkdin-icon.png"></a></li>
-          <li><a href="#"><img src="images/instagram-icon.png"></a></li>
+          <li><a href="#"><img width="24px" height="24px" alt="Facebook"
+                src="<?php echo $GLOBALS["root"]; ?>/_assets/svg/facebook.svg"></a></li>
+          <li><a href="#"><img width="24px" height="24px" alt="Instagram"
+                src="<?php echo $GLOBALS["root"]; ?>/_assets/svg/instagram.svg"></a></li>
+          <li><a href="#"><img width="24px" height="24px" alt="Tiktok"
+                src="<?php echo $GLOBALS["root"]; ?>/_assets/svg/tiktok.svg"></a></li>
+          <li><a href="#"><img width="24px" height="24px" alt="X (Twitter)"
+                src="<?php echo $GLOBALS["root"]; ?>/_assets/svg/x-twitter.svg"></a></li>
         </ul>
-      </div>
+      </section>
     </div>
   </footer>
-  <!-- footer section end -->
-  <!-- copyright section start -->
   <div class="copyright_section">
     <div class="container">
       <span>
@@ -186,7 +183,6 @@
       </span>
     </div>
   </div>
-  <!-- copyright section end -->
 <?php } ?>
 <?php function get_js_scripts()
 { ?>

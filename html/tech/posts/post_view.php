@@ -17,7 +17,7 @@ $keywords = implode(', ', $tagNames);
 <html lang="<?php echo $lang; ?>">
 
 <head>
-  <?php get_head($post["title"], $keywords, $post["description"]); ?>
+  <?php get_head($post["title"], $keywords, $post["description"]; ?>
 </head>
 
 <body>
@@ -57,7 +57,6 @@ $keywords = implode(', ', $tagNames);
       </footer>
     </article>
   </div>
-  <!-- about section end -->
   <?php get_body_footer(); ?>
   <?php get_js_scripts(); ?>
 </body>

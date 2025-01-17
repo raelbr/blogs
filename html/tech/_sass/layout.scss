@@ -20,6 +20,10 @@
   padding: 0;
 }
 
+main.page {
+  padding: 30px 20px;
+}
+
 .form-control:focus {
   border-color: #ffffff !important;
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
@@ -551,6 +555,25 @@ button {
       padding: 0 5px;
     }
   }
+
+  .social_icons {
+    display: flex;
+    width: 100%;
+    padding-top: 30px;
+    ul {
+      display: inline-flex;
+      gap: 5px;
+      margin: auto;
+      li a {
+        padding: 5px;
+        opacity: 0.6;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 .account_text {
@@ -587,7 +610,6 @@ button {
 
 .footer_section_2 {
   width: 100%;
-  float: left;
   border-bottom: 1px solid #898989;
   padding-bottom: 40px;
   padding-left: 20px;

@@ -6,10 +6,12 @@
   padding-right: 0;
   padding-bottom: 20px;
 
-  > article {
+  > article,
+  .page {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
   }
 
   a {
