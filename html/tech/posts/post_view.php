@@ -17,7 +17,7 @@ $keywords = implode(', ', $tagNames);
 <html lang="<?php echo $lang; ?>">
 
 <head>
-  <?php get_head($post["title"], $keywords, $post["description"]; ?>
+  <?php get_head($post["title"], $keywords, $post["description"]); ?>
 </head>
 
 <body>
@@ -31,15 +31,16 @@ $keywords = implode(', ', $tagNames);
         <h1 class="post_h1"><?php echo $post["title"]; ?></h1>
         <div class="header_infos">
           <span class="post-date"><?php echo format_date_only($post["created_at"]); ?></span>
-          <a href="<?php echo $post["category_slug"]; ?>"><?php echo $post["category_name"]; ?></a>
+          <a
+            href="<?php echo $GLOBALS["root"] . "/category/" . $post["category_slug"]; ?>"><?php echo $post["category_name"]; ?></a>
         </div>
       </header>
       <main>
         <?php echo $post["content"]; ?>
         <?php if (!is_null($post["source_url"])) { ?>
           <div class="post-source">
-            <p><strong>Source: </strong><a href="<?php echo $post["source_url"] ?>"
-                rel="no-follow"><?php echo $post["source_name"] ?></a></p>
+            <p><strong>Source: </strong><a href="<?php echo $post["source_url"] ?>"><?php echo $post["source_name"] ?></a>
+            </p>
           </div>
         <?php } ?>
       </main>

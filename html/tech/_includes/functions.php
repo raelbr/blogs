@@ -19,7 +19,7 @@ function get_single_post_by_slug($slug)
  */
 function get_post_list($page)
 {
-  $sql = get_query_post_list("1=1", $page);
+  $sql = get_query_post_list("TRUE", $page);
   $sth = $GLOBALS["pdo"]->prepare($sql);
   $sth->execute();
   return $sth->fetchAll(\PDO::FETCH_ASSOC);
@@ -58,7 +58,7 @@ function get_post_list_by_keywords($keywords, $page)
 
 function get_footer_categories()
 {
-  $sql = get_categories_list_query("1=1", 15, "count DESC");
+  $sql = get_categories_list_query("TRUE", 15, "count DESC");
   $stmt = $GLOBALS["pdo"]->prepare($sql);
   $stmt->execute();
   return $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -66,7 +66,7 @@ function get_footer_categories()
 
 function get_footer_tags()
 {
-  $sql = get_tags_list_query("1=1", 15, "count DESC");
+  $sql = get_tags_list_query("TRUE", 15, "count DESC");
   $stmt = $GLOBALS["pdo"]->prepare($sql);
   $stmt->execute();
   return $stmt->fetchAll(\PDO::FETCH_ASSOC);

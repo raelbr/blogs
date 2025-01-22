@@ -1,4 +1,5 @@
-@import "./variables.scss";
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
 
 .post {
   margin-top: 0px;

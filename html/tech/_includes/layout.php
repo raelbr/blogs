@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-  <title><?php echo $title != "" ? $title . ' - ' : ''; ?>RobotShack</title>
+  <title><?php echo $title != "" ? $title . ' - ' : ''; ?>TechDrops.net</title>
   <meta name="lang"
     content="<?php echo isset($GLOBALS["lang_dictionary"][get_lang()]) ? $GLOBALS["lang_dictionary"][get_lang()] : 'en'; ?>">
   <meta name="keywords" content="<?php echo $keywords; ?>">
@@ -26,9 +26,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <div class="logo">
-          <a role="brand" href="<?php echo $GLOBALS['root']; ?>/">
-            <img src="../_assets/svg/logo.svg" />
-            <span><b>robot</b>shack</span>
+          <a role="brand" href="<?php echo $GLOBALS['root']; ?>/home">
+            <span><b>tech</b>drops<i>.net</i></span>
           </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -38,7 +37,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>"><?php translate("Home"); ?></a>
+              <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>/home"><?php translate("Home"); ?></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo $GLOBALS["root"]; ?>/articles"><?php translate("Articles"); ?></a>
@@ -179,7 +178,7 @@
   <div class="copyright_section">
     <div class="container">
       <span>
-        Copyright RobotShack 2025 All Right Reserved
+        Copyright techdrops.net 2025 All Right Reserved
       </span>
     </div>
   </div>

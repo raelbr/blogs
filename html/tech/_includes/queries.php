@@ -5,9 +5,9 @@ $PAGINATION_LIMIT = 30;
 /**
  * ## get_query_post_list
  */
-function get_query_post_list($where, $page)
+function get_query_post_list($where, $page = 1)
 {
-  $offset = ($page - 1) * $GLOBALS["PAGINATION_LIMIT"];
+  $offset = ((int) $page - 1) * 30;
   $limit = $GLOBALS["PAGINATION_LIMIT"];
   $lang = get_lang();
   return "
@@ -49,7 +49,7 @@ function get_post_by_slug()
   return $query;
 }
 
-function get_categories_list_query($where = "1=1", $limit = 20, $order_by = "id DESC")
+function get_categories_list_query($where = "TRUE", $limit = 20, $order_by = "id DESC")
 {
   $lang = get_lang();
   return "
@@ -61,7 +61,7 @@ function get_categories_list_query($where = "1=1", $limit = 20, $order_by = "id 
   ";
 }
 
-function get_tags_list_query($where = "1=1", $limit = 20, $order_by = "id DESC")
+function get_tags_list_query($where = "TRUE", $limit = 20, $order_by = "id DESC")
 {
   $lang = get_lang();
   return "

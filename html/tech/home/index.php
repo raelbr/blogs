@@ -4,7 +4,7 @@
 <?php require_once("../_includes/functions.php"); ?>
 <?php require_once("../_includes/posts.php"); ?>
 <?php
-$page = isset($_GET["slug"]) ? $_GET["slug"] : 1;
+$page = isset($_GET["pg"]) ? $_GET["pg"] : 1;
 $page_query = get_post_list($page);
 ?>
 

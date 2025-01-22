@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/post/]+)$ /tech/posts/post_view.php?slug=$1 [L,QSA]
-RewriteRule ^$ /home [L]
+RewriteBase /
+RewriteRule ^post/([^/]+)/?$ posts/post_view.php?slug=$1 [L,QSA]
+RewriteRule ^tag/([^/]+)/?$ tags/index.php?slug=$1 [L,QSA]
+RewriteRule ^category/([^/]+)/?$ categories/index.php?slug=$1 [L,QSA]
