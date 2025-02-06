@@ -10,12 +10,8 @@
   <meta name="keywords" content="<?php echo $keywords; ?>">
   <meta name="description" content="<?php echo $description; ?>">
   <meta name="author" content="Rael B. Riolino">
-  <script src="
-    https://cdn.jsdelivr.net/npm/lightgallery@2.8.2/lightgallery.min.js
-    "></script>
-  <link href="
-https://cdn.jsdelivr.net/npm/lightgallery@2.8.2/css/lightgallery.min.css
-" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.8.2/lightgallery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.8.2/css/lightgallery.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo $GLOBALS['root']; ?>/_css/style.css">
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/responsive.css">
@@ -23,8 +19,14 @@ https://cdn.jsdelivr.net/npm/lightgallery@2.8.2/css/lightgallery.min.css
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/jquery.mCustomScrollbar.min.css">
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/owl.carousel.min.css">
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
-    media="screen">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+    media="screen"> -->
+  <link rel="alternate" hreflang="en-us" href="<?php echo $GLOBALS['en_url']; ?>" />
+  <link rel="alternate" hreflang="en" href="<?php echo $GLOBALS['en_url']; ?>" />
+  <link rel="alternate" hreflang="es" href="<?php echo $GLOBALS['es_url']; ?>" />
+  <link rel="alternate" hreflang="fr" href="<?php echo $GLOBALS['fr_url']; ?>" />
+  <link rel="alternate" hreflang="pt" href="<?php echo $GLOBALS['pt_url']; ?>" />
+  <link rel="alternate" hreflang="pt-br" href="<?php echo $GLOBALS['pt_url']; ?>" />
 <?php } ?>
 <?php function get_body_header()
 { ?>
@@ -185,6 +187,12 @@ https://cdn.jsdelivr.net/npm/lightgallery@2.8.2/css/lightgallery.min.css
     <div class="container">
       <span>
         Copyright techdrops.net 2025 All Right Reserved
+      </span>
+      <span class="language-list">
+        <?php if (get_lang() != 1) { ?><a lang="en" hreflang="en" href="http://www.techdrops.net">EN</a><?php } ?>
+        <?php if (get_lang() != 2) { ?><a lang="es" hreflang="es" href="http://es.techdrops.net">ES</a><?php } ?>
+        <?php if (get_lang() != 3) { ?><a lang="fr" hreflang="fr" href="http://fr.techdrops.net">FR</a><?php } ?>
+        <?php if (get_lang() != 4) { ?><a lang="pt" hreflang="pt" href="http://pt.techdrops.net">PT/BR</a><?php } ?>
       </span>
     </div>
   </div>

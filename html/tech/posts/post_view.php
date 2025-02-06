@@ -106,13 +106,15 @@ $has_images = $images_count > 0;
       </main>
       <footer>
         <strong>Tags:</strong>
-        <li class="post-tags">
+        <ul class="post-tags">
           <?php foreach ($tags as $tag) { ?>
-            <a href="<?php $GLOBALS["root"]; ?>/tag/<?php echo $tag["slug"]; ?>">
-              <?php echo $tag["name"]; ?>
-            </a>
+            <li>
+              <a href="<?php $GLOBALS["root"]; ?>/tag/<?php echo $tag["slug"]; ?>">
+                <?php echo $tag["name"]; ?>
+              </a>
+            </li>
           <?php } ?>
-        </li>
+        </ul>
       </footer>
     </article>
   </div>

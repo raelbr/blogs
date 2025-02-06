@@ -13,8 +13,12 @@ $translate = array(
     '2' => 'Categorias',
     '4' => 'Categorias'
   ),
+  'Articles' => array(
+    '2' => 'Artículos',
+    '4' => 'Artigos'
+  ),
   'Top Categories' => array(
-    '2' => 'Top Categorias',
+    '2' => 'Top Categorías',
     '4' => 'Top Categorias'
   ),
   'Tags' => array(
@@ -34,15 +38,19 @@ $translate = array(
     '4' => 'Contato'
   ),
   'Search' => array(
-    '2' => 'Busca',
+    '2' => 'Buscar',
     '4' => 'Busca'
   ),
+  'Source' => array(
+    '2' => 'Fuente',
+    '4' => 'Fonte'
+  ),
   'Our Partners' => array(
-    '2' => 'Nossos Parceiros',
+    '2' => 'Nuestros Socios',
     '4' => 'Nossos Parceiros'
   ),
   'Follow Us' => array(
-    '2' => 'Siga-nos',
+    '2' => 'Síganos',
     '4' => 'Siga-nos'
   ),
   'Contact Us to become a partner!' => array(
@@ -58,15 +66,15 @@ $translate = array(
     '4' => 'Vídeos'
   ),
   'Image' => array(
-    '2' => 'Imagem',
+    '2' => 'Imagen',
     '4' => 'Imagem'
   ),
   'Images' => array(
-    '2' => 'Imagens',
+    '2' => 'Imágenes',
     '4' => 'Imagens'
   ),
   'of' => array(
-    '2' => 'de',
+    '2' => 'del',
     '4' => 'de'
   )
 );

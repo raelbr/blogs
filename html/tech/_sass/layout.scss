@@ -656,15 +656,27 @@ button {
   background-color: $primary-color;
   height: auto;
 
-  span {
+  > div {
     width: 100%;
-    float: left;
     font-size: 16px;
     color: #ffffff;
     text-align: center;
     margin-left: 0px;
     font-size: 12px;
     padding: 5px 0;
+
+    span.language-list {
+      padding-left: 5px;
+      margin-left: 5px;
+      border-left: 1px solid white;
+
+      a {
+        color: white;
+        opacity: 0.8;
+        padding: 2px;
+        cursor: pointer;
+      }
+    }
   }
 }
 
