@@ -65,7 +65,16 @@ $has_images = $images_count > 0;
 
         <?php if ($has_images) { ?>
           <div role="images" data-type="image" class="post_gallery">
-            <h4><?php translate($images_count == 1 ? "Imagem" : "Imagens"); ?></h4>
+            <h4><?php echo $images_count; ?>   <?php translate($images_count == 1 ? "Image" : "Images"); ?>
+              <?php translate("of"); ?>   <?php echo $post["subject"]; ?>:
+              <div class="post-image-gallery-wrapper" id="post-image-gallery">
+                <?php foreach ($post_images as $image) { ?>
+                  <a href="<?php echo $GLOBALS['imagePath']; ?><?php echo $image->src; ?>">
+                    <img width="180" src="<?php echo $GLOBALS['imagePath']; ?><?php echo $image->thumbnail; ?>" />
+                  </a>
+                <?php } ?>
+              </div>
+            </h4>
           </div>
         <?php } ?>
 
@@ -97,20 +106,26 @@ $has_images = $images_count > 0;
       </main>
       <footer>
         <strong>Tags:</strong>
-        <ul class="post-tags">
+        <li class="post-tags">
           <?php foreach ($tags as $tag) { ?>
-            <li>
-              <a href="<?php $GLOBALS["root"]; ?>/tag/<?php echo $tag["slug"]; ?>">
-                <?php echo $tag["name"]; ?>
-              </a>
-            </li>
+            <a href="<?php $GLOBALS["root"]; ?>/tag/<?php echo $tag["slug"]; ?>">
+              <?php echo $tag["name"]; ?>
+            </a>
           <?php } ?>
-        </ul>
+        </li>
       </footer>
     </article>
   </div>
   <?php get_body_footer(); ?>
   <?php get_js_scripts(); ?>
 </body>
+
+<?php if ($has_images) { ?>
+  <script>
+    lightGallery(document.getElementById("post-image-gallery"), {
+      thumbnail: true,
+    });
+  </script>
+<?php } ?>
 
 </html>

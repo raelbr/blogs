@@ -10,6 +10,12 @@
   <meta name="keywords" content="<?php echo $keywords; ?>">
   <meta name="description" content="<?php echo $description; ?>">
   <meta name="author" content="Rael B. Riolino">
+  <script src="
+    https://cdn.jsdelivr.net/npm/lightgallery@2.8.2/lightgallery.min.js
+    "></script>
+  <link href="
+https://cdn.jsdelivr.net/npm/lightgallery@2.8.2/css/lightgallery.min.css
+" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo $GLOBALS['root']; ?>/_css/style.css">
   <link rel="stylesheet" href="<?php echo $GLOBALS['root']; ?>/_css/responsive.css">

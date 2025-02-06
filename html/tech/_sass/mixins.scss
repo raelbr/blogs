@@ -1,3 +1,9 @@
+@mixin bigScreens() {
+  @media (width > 991) {
+    @content;
+  }
+}
+
 @mixin mobile() {
   @media (width <= 600px) {
     @content;
