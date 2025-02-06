@@ -2,6 +2,13 @@
 
 $PAGINATION_LIMIT = 30;
 
+function get_post_media_query($post_id)
+{
+  return "SELECT *
+      FROM media
+      WHERE post_id = $post_id";
+}
+
 /**
  * ## get_query_post_list
  */

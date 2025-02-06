@@ -7,7 +7,7 @@ function render_post_list($post_query)
       <?php foreach ($post_query as $post) { ?>
         <a href="<?php echo $GLOBALS["root"] . '/post/' . $post["slug"]; ?>" class="post-item col-md-6">
           <section class="post-image">
-            <img src="<?php echo $post['thumbnail'] ?>" />
+            <img src="<?php echo $GLOBALS['imagePath']; ?><?php echo $post['thumbnail'] ?>" />
           </section>
           <section class="post-content">
             <span class="post-item-category"><?php echo $post["category_name"] ?></span>

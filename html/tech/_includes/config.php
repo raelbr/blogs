@@ -20,6 +20,7 @@ try {
 $post_img_url = "";
 $lang = 1;
 $root = isset($_env['SITE_ROOT']) ? $_env['SITE_ROOT'] : getenv('SITE_ROOT');
+$imagePath = $root . '/images/';
 
 $lang_dictionary = array(
   "1" => "en",

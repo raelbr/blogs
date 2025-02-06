@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS posts (
   source_url: VARCHAR(500) NOT NULL,
   highlight TINYINT NOT NULL DEFAULT 0,
   hits INT NOT NULL DEFAULT 0,
+  uniqueId: INT NOT NULL,
   FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE,
   UNIQUE (slug)
 );

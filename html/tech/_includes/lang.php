@@ -7,47 +7,67 @@
 $translate = array(
   'Home' => array(
     '2' => 'Home',
-    '3' => 'Home'
+    '4' => 'Home'
   ),
   'Categories' => array(
     '2' => 'Categorias',
-    '3' => 'Categorias'
+    '4' => 'Categorias'
   ),
   'Top Categories' => array(
     '2' => 'Top Categorias',
-    '3' => 'Top Categorias'
+    '4' => 'Top Categorias'
   ),
   'Tags' => array(
     '2' => 'Tags',
-    '3' => 'Tags'
+    '4' => 'Tags'
   ),
   'Top Post Tags' => array(
     '2' => 'Top Tags Publicadas',
-    '3' => 'Top Tags Publicadas'
+    '4' => 'Top Tags Publicadas'
   ),
   'Product Scope' => array(
     '2' => 'Product Scope',
-    '3' => 'Product Scope'
+    '4' => 'Product Scope'
   ),
   'Contact' => array(
     '2' => 'Contacto',
-    '3' => 'Contato'
+    '4' => 'Contato'
   ),
   'Search' => array(
     '2' => 'Busca',
-    '3' => 'Busca'
+    '4' => 'Busca'
   ),
   'Our Partners' => array(
     '2' => 'Nossos Parceiros',
-    '3' => 'Nossos Parceiros'
+    '4' => 'Nossos Parceiros'
   ),
   'Follow Us' => array(
     '2' => 'Siga-nos',
-    '3' => 'Siga-nos'
+    '4' => 'Siga-nos'
   ),
   'Contact Us to become a partner!' => array(
     '2' => '¡Contáctanos para convertirte en socio!',
-    '3' => 'Entre em contato conosco para se tornar um parceiro!'
+    '4' => 'Entre em contato conosco para se tornar um parceiro!'
   ),
+  'Video' => array(
+    '2' => 'Vídeo',
+    '4' => 'Vídeo'
+  ),
+  'Videos' => array(
+    '2' => 'Vídeos',
+    '4' => 'Vídeos'
+  ),
+  'Image' => array(
+    '2' => 'Imagem',
+    '4' => 'Imagem'
+  ),
+  'Images' => array(
+    '2' => 'Imagens',
+    '4' => 'Imagens'
+  ),
+  'of' => array(
+    '2' => 'de',
+    '4' => 'de'
+  )
 );
 ?>

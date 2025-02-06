@@ -11,6 +11,29 @@ $post = get_single_post_by_slug(slug: $post_slug);
 $tags = get_post_tags($post["id"]);
 $tagNames = array_map(fn($tag) => $tag['name'], $tags);
 $keywords = implode(', ', $tagNames);
+$media_list = get_post_media($post['id']);
+$main_image = "";
+$post_images = array();
+$post_videos = array();
+foreach ($media_list as $media) {
+  if ($media["type"] == 1) {
+    if ($media["pos"] == 1) {
+      $main_image = $media["value"];
+    } else {
+      $post_images[] = (object) [
+        'src' => $media["value"],
+        'thumbnail' => $media['thumbnail']
+      ];
+    }
+  }
+  if ($media["type"] == 2) {
+    $post_videos[] = $media["value"];
+  }
+}
+$videos_count = count($post_videos);
+$images_count = count($post_images);
+$has_videos = $videos_count > 0;
+$has_images = $images_count > 0;
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +47,11 @@ $keywords = implode(', ', $tagNames);
   <?php get_body_header(); ?>
   <div class="container post">
     <article class="col-md-9">
-      <section class="post-image">
-        <img src="<?php echo $post["thumbnail"]; ?>" />
-      </section>
+      <?php if (!empty($main_image)) { ?>
+        <figure class="post-image">
+          <img src="<?php echo $GLOBALS['imagePath'] . $main_image; ?>" />
+        </figure>
+      <?php } ?>
       <header>
         <h1 class="post_h1"><?php echo $post["title"]; ?></h1>
         <div class="header_infos">
@@ -37,12 +62,38 @@ $keywords = implode(', ', $tagNames);
       </header>
       <main>
         <?php echo $post["content"]; ?>
+
+        <?php if ($has_images) { ?>
+          <div role="images" data-type="image" class="post_gallery">
+            <h4><?php translate($images_count == 1 ? "Imagem" : "Imagens"); ?></h4>
+          </div>
+        <?php } ?>
+
+        <?php if ($has_videos) { ?>
+          <div role="gallery" data-type="video" class="post_gallery">
+            <h4><?php echo $videos_count; ?>   <?php translate($videos_count == 1 ? "Video" : "Videos"); ?>
+              <?php translate("of"); ?>   <?php echo $post["subject"]; ?>:
+            </h4>
+            <ul>
+              <?php foreach ($post_videos as $video) { ?>
+                <li>
+                  <div class="post-video-container">
+                    <iframe width="100%" height="100%" src="<?php echo $video; ?>" frameborder="0"
+                      allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                </li>
+              <?php } ?>
+            </ul>
+          </div>
+        <?php } ?>
+
         <?php if (!is_null($post["source_url"])) { ?>
           <div class="post-source">
             <p><strong>Source: </strong><a href="<?php echo $post["source_url"] ?>"><?php echo $post["source_name"] ?></a>
             </p>
           </div>
         <?php } ?>
+
       </main>
       <footer>
         <strong>Tags:</strong>

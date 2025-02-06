@@ -1,6 +1,18 @@
 <?php
 require_once("queries.php");
 
+
+/**
+ * get_post_media
+ */
+function get_post_media($post_id)
+{
+  $sql = get_post_media_query($post_id);
+  $stmt = $GLOBALS["pdo"]->prepare($sql);
+  $stmt->execute();
+  return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+}
+
 /**
  * ## get_single_post_by_slug
  * returns details of a single post by slug
