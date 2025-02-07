@@ -47,11 +47,12 @@ function get_post_tags_query($post_id)
  */
 function get_post_by_slug()
 {
+  $lang = get_lang();
   $query = "
     SELECT posts.*, categories.name as category_name, categories.slug as category_slug
       FROM posts
       LEFT JOIN categories ON categories.id = posts.category_id
-      WHERE posts.slug = ?
+      WHERE posts.slug = ? AND posts.lang = $lang
   ";
   return $query;
 }

@@ -1,11 +1,11 @@
 @mixin bigScreens() {
-  @media (width > 991) {
+  @media screen and (min-width: 991px) {
     @content;
   }
 }
 
 @mixin mobile() {
-  @media (width <= 600px) {
+  @media screen and (max-width: 600px) {
     @content;
   }
 }

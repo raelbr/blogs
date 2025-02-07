@@ -189,10 +189,14 @@
         Copyright techdrops.net 2025 All Right Reserved
       </span>
       <span class="language-list">
-        <?php if (get_lang() != 1) { ?><a lang="en" hreflang="en" href="http://www.techdrops.net">EN</a><?php } ?>
-        <?php if (get_lang() != 2) { ?><a lang="es" hreflang="es" href="http://es.techdrops.net">ES</a><?php } ?>
-        <?php if (get_lang() != 3) { ?><a lang="fr" hreflang="fr" href="http://fr.techdrops.net">FR</a><?php } ?>
-        <?php if (get_lang() != 4) { ?><a lang="pt" hreflang="pt" href="http://pt.techdrops.net">PT/BR</a><?php } ?>
+        <?php if (get_lang() != 1) { ?><a title="Techdrops.net - English Version" lang="en" hreflang="en"
+            href="http://www.techdrops.net">EN</a><?php } ?>
+        <?php if (get_lang() != 2) { ?><a title="Techdrops.net - Versión en Español" lang="es" hreflang="es"
+            href="http://es.techdrops.net">ES</a><?php } ?>
+        <?php if (get_lang() != 3) { ?><a title="Techdrops.net - Version Française" lang="fr" hreflang="fr"
+            href="http://fr.techdrops.net">FR</a><?php } ?>
+        <?php if (get_lang() != 4) { ?><a title="Techdrops.net - Versão em Português" lang="pt" hreflang="pt"
+            href="http://pt.techdrops.net">PT/BR</a><?php } ?>
       </span>
     </div>
   </div>

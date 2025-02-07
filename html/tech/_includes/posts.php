@@ -5,7 +5,7 @@ function render_post_list($post_query)
   <div class="container post-list">
     <div class="row">
       <?php foreach ($post_query as $post) { ?>
-        <a href="<?php echo $GLOBALS["root"] . '/post/' . $post["slug"]; ?>" class="post-item col-md-6">
+        <a href="<?php echo $GLOBALS["root"] . '/post/' . $post["slug"]; ?>" class="post-item col-md-12 col-lg-6">
           <section class="post-image">
             <img src="<?php echo $GLOBALS['imagePath']; ?><?php echo $post['thumbnail'] ?>" />
           </section>
