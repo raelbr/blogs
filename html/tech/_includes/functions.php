@@ -38,6 +38,17 @@ function get_post_list($page)
 }
 
 /**
+ * ## get_post_list_by_keyword
+ * returns a list of posts based on provided keywords and page
+ */
+function get_post_list_by_keyword($keywords, $page) {
+  $sql = get_post_list_by_keyword_query($keywords, $page);
+  $sth = $GLOBALS["pdo"]->prepare($sql);
+  $sth->execute();
+  return $sth->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+/**
  * ## get_post_list_by_category
  * returns a list of posts based on provided category and page
  */
@@ -56,15 +67,6 @@ function get_post_tags($post_id)
   $stmt = $GLOBALS["pdo"]->prepare($sql);
   $stmt->execute();
   return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-}
-
-/**
- * ## get_post_list_by_keywords
- * returns a list of posts based on provided keywords and page
- */
-function get_post_list_by_keywords($keywords, $page)
-{
 
 }
 

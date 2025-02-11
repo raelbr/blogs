@@ -59,7 +59,7 @@
           </ul>
           <div class="nav-item search">
             <img src="<?php echo $GLOBALS["root"]; ?>/_assets/svg/search.svg" />
-            <input placeholder="<?php translate("Search"); ?>" />
+            <input id="app-search-field" value="<?php echo isset($_GET["kw"]) ? $_GET["kw"] : ""; ?>" placeholder="<?php translate("Search"); ?>" />
           </div>
         </div>
       </div>
@@ -221,5 +221,12 @@
         openEffect: "none",
         closeEffect: "none"
       });
+      $("#app-search-field").on("keypress", (event) => {
+        if (event.key === 'Enter') {
+          const value = $("#app-search-field")[0].value;
+          if (value) location.href = `<?php echo $GLOBALS["root"];?>/search?kw=${value}`;
+        }
+      });
+    });
   </script>
 <?php } ?>

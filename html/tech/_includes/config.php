@@ -18,15 +18,18 @@ try {
 }
 
 $post_img_url = "";
-$lang = 4;
 $root = isset($_env['SITE_ROOT']) ? $_env['SITE_ROOT'] : getenv('SITE_ROOT');
 $imagePath = $root . '/images/';
 
 $lang_dictionary = array(
-  "1" => "en",
-  "2" => "es",
-  "4" => "br",
+  "en" => 1,
+  "es" => 2,
+  "fr" => 3,
+  "br" => 4,
+  "pt" => 4
 );
+$url_lang = explode('.', $_SERVER["HTTP_HOST"])[0];
+$lang = isset($lang_dictionary[$url_lang]) ? $lang_dictionary[$url_lang] : 1;
 
 $en_url = 'http://www.techzine.net';
 $es_url = 'http://es.techzine.net';

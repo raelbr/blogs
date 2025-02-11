@@ -195,6 +195,14 @@
       transform: scale(0.98);
     }
   }
+
+  .post_list_pagination {
+    display: flex;
+
+    a {
+      background-color: var(--primary-color-1);
+    }
+  }
 }
 
 @include mobile {
@@ -214,4 +222,9 @@
       padding: 0 30px;
     }
   }
+}
+
+.not-found-page {
+  display: block;
+  padding: 52px 8px;
 }

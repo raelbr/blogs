@@ -8,43 +8,53 @@ if (!isset($_GET["slug"])) {
 }
 $post_slug = parse_get(var: 'slug');
 $post = get_single_post_by_slug(slug: $post_slug);
-$tags = get_post_tags($post["id"]);
-$tagNames = array_map(fn($tag) => $tag['name'], $tags);
-$keywords = implode(', ', $tagNames);
-$media_list = get_post_media($post['id']);
-$main_image = "";
-$post_images = array();
-$post_videos = array();
-foreach ($media_list as $media) {
-  if ($media["type"] == 1) {
-    if ($media["pos"] == 1) {
-      $main_image = $media["value"];
-    } else {
-      $post_images[] = (object) [
-        'src' => $media["value"],
-        'thumbnail' => $media['thumbnail']
-      ];
+$has_post = isset($post["id"]);
+if ($has_post) {
+  $tags = get_post_tags($post["id"]);
+  $tagNames = array_map(fn($tag) => $tag['name'], $tags);
+  $keywords = implode(', ', $tagNames);
+  $media_list = get_post_media($post['id']);
+  $main_image = "";
+  $post_images = array();
+  $post_videos = array();
+  foreach ($media_list as $media) {
+    if ($media["type"] == 1) {
+      if ($media["pos"] == 1) {
+        $main_image = $media["value"];
+      } else {
+        $post_images[] = (object) [
+          'src' => $media["value"],
+          'thumbnail' => $media['thumbnail']
+        ];
+      }
+    }
+    if ($media["type"] == 2) {
+      $post_videos[] = $media["value"];
     }
   }
-  if ($media["type"] == 2) {
-    $post_videos[] = $media["value"];
-  }
+  $videos_count = count($post_videos);
+  $images_count = count($post_images);
+  $has_videos = $videos_count > 0;
+  $has_images = $images_count > 0;
 }
-$videos_count = count($post_videos);
-$images_count = count($post_images);
-$has_videos = $videos_count > 0;
-$has_images = $images_count > 0;
+
 ?>
 
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
 
 <head>
-  <?php get_head($post["title"], $keywords, $post["description"]); ?>
+
+  <?php if($has_post) {
+    get_head($post["title"], $keywords, $post["description"]);
+  } else {
+    get_head("Not Found", "", "");
+  } ?>
 </head>
 
 <body>
   <?php get_body_header(); ?>
+  <?php if ($has_post) { ?>
   <div class="container post">
     <article class="col-md-9">
       <?php if (!empty($main_image)) { ?>
@@ -118,11 +128,17 @@ $has_images = $images_count > 0;
       </footer>
     </article>
   </div>
+  <?php } else { ?>
+    <div class="container not-found-page">
+      <h4><?php translate("Not Found"); ?></h4>
+      <p><?php translate("Looks like the page you´re looking for is not available."); ?></p>
+    </div>
+  <?php } ?>
   <?php get_body_footer(); ?>
   <?php get_js_scripts(); ?>
 </body>
 
-<?php if ($has_images) { ?>
+<?php if ($has_post && $has_images) { ?>
   <script>
     lightGallery(document.getElementById("post-image-gallery"), {
       thumbnail: true,

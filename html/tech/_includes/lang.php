@@ -76,6 +76,14 @@ $translate = array(
   'of' => array(
     '2' => 'del',
     '4' => 'de'
+  ),
+  'Not Found' => array(
+    '2' => 'No Encontrado',
+    '4' => 'Não Encontrado',
+  ),
+  "Looks like the page you're looking for is not available." => array(
+    '2' => 'La pagina que estás procurando no estás disponible.',
+    '4' => 'Parece que a página que você procurando não está disponível.',
   )
 );
 ?>
