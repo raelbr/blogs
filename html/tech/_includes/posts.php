@@ -27,10 +27,8 @@ function render_post_list($post_query)
         </a>
       <? } ?>
     </div>
-    <nav role="pagination" class="post_list_pagination">
-      <?php if($has_previous) { ?>
-        <a class="pagination_previous_bt" href="<?php echo "?pg=$previous_page"; ?>"><?php translate("Previous Page"); ?></a>        
-      <?php } ?>
+    <nav role="pagination" class="post-list-pagination">
+      <a class="pagination_previous_bt<?php echo $has_previous ? ' hidden' : '';?>" href="<?php echo $has_previous ? "?pg=$previous_page" : '#'; ?>"><?php translate("Previous Page"); ?></a>        
       <a class="pagination_next_bt" href="<?php echo "?pg=$next_page"; ?>"><?php translate("Next Page"); ?></a>        
     </nav>
   </div>

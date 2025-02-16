@@ -1,6 +1,6 @@
 <?php
 
-$PAGINATION_LIMIT = 3;
+$PAGINATION_LIMIT = 12;
 
 function get_post_media_query($post_id)
 {
@@ -120,12 +120,13 @@ function get_tag_by_slug_query()
 }
 function get_tag_posts_by_tag_id_query($id)
 {
+  $lang = get_lang();
   return "
     SELECT posts.*, categories.name as category_name, categories.slug as category_slug
       FROM posts_tags
-      LEFT JOIN posts ON posts_tags.post_id = posts.id
-      LEFT JOIN categories ON categories.id = posts.category_id
-      WHERE posts_tags.tag_id=$id
+      RIGHT JOIN posts ON posts_tags.post_id = posts.id
+      RIGHT JOIN categories ON categories.id = posts.category_id
+      WHERE posts_tags.tag_id=$id AND posts.lang=$lang 
   ";
 }
 
